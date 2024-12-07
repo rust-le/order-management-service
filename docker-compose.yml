@@ -4,8 +4,8 @@ services:
     image: postgres:16
     restart: always
     environment:
-      POSTGRES_PASSWORD: shiplink
-      POSTGRES_DB: shiplink
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "15432:5432"
   php-fpm:
