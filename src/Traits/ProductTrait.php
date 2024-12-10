@@ -2,9 +2,17 @@
 
 namespace App\Traits;
 
+use App\Entity\Product;
+
 trait ProductTrait
 {
-    public function from($product): array
+    /**
+     * Convert from Product entity to array
+     *
+     * @param Product $product
+     * @return array
+     */
+    public function from(Product $product): array
     {
         $productRating = $product->getProductRating();
         return [
