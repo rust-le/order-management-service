@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "3789833b-6261-4dfe-a3af-31cd092a724d",
+		"name": "Order Management Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4943233"
+	},
+	"item": [
+		{
+			"name": "localhost/products/sync",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"products\": [\n        {\n            \"id\": 3,\n            \"title\": \"Mens Cotton Jacket\",\n            \"qty\": 333\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Mens Casual Slim Fit\",\n            \"qty\": 331\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/products/sync",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"products",
+						"sync"
+					]
+				},
+				"description": "sync products from remote API"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/products",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"products"
+					]
+				},
+				"description": "get all products"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/products/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/products/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"products",
+						"1"
+					]
+				},
+				"description": "get product by id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/orders",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"orders"
+					]
+				},
+				"description": "get all orders"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/orders",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"products\": [\n        {\n            \"id\": 3,\n            \"qty\": 333\n        },\n        {\n            \"id\": 4,\n            \"qty\": 331\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/orders",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"orders"
+					]
+				},
+				"description": "create order"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/orders/1",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"deleted\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/orders/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"orders",
+						"1"
+					]
+				},
+				"description": "update order status"
+			},
+			"response": []
+		}
+	]
+}
